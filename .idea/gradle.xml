@@ -10,8 +10,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/UIComponents" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/dataStorage" />
+            <option value="$PROJECT_DIR$/networkModule" />
+            <option value="$PROJECT_DIR$/uiComponents" />
           </set>
         </option>
       </GradleProjectSettings>

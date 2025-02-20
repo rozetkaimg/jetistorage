@@ -1,20 +1,15 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
-
 }
 
 android {
-    namespace = "com.example.myapplication"
+    namespace = "com.rozetka.networkmodule"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.myapplication"
         minSdk = 26
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+
 
     }
 
@@ -34,7 +29,6 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-
 }
 
 dependencies {
@@ -44,10 +38,8 @@ dependencies {
     implementation(libs.koin.coroutines)
     implementation(libs.koin.annotations)
     implementation(libs.koin.ksp.compiler)
+    implementation(libs.koin.logging)
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(project(":core"))
-    implementation(project(":uiComponents"))
-    implementation(project(":dataStorage"))
-    implementation(project(":networkModule"))
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
 }
