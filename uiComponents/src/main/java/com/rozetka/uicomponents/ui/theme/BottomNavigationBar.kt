@@ -1,5 +1,8 @@
 package com.rozetka.uicomponents.ui.theme
 
+import android.os.Build
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
@@ -13,15 +16,30 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.rozetka.uicomponents.R
+import com.rozetka.uicomponents.ext.getNavigationBarHeight
 
 @Composable
 fun BottomNavigationBar(navController: NavController) {
 
     var selectedItem by rememberSaveable { mutableStateOf("storage_screen") }
-    NavigationBar {
+    val navBarHeightDp = with(LocalDensity.current) { if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+        getNavigationBarHeight().toDp()
+    } else {
+        30.dp
+    }
+    }
+    NavigationBar(Modifier.clip(RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp)).height(navBarHeightDp + 86.dp),) {
+
+
         NavigationBarItem(
             selected = selectedItem == "storage_screen",
             onClick = {
@@ -30,7 +48,7 @@ fun BottomNavigationBar(navController: NavController) {
                     popUpTo("storage_screen") { inclusive = true }
                 }
             },
-            icon = { Icon(Icons.Default.Home, contentDescription = stringResource(R.string.storage)) },
+            icon = { Icon( imageVector = ImageVector.vectorResource(R.drawable.archive), contentDescription = stringResource(R.string.storage)) },
             label = { Text(stringResource(R.string.storage)) }
         )
         NavigationBarItem(
@@ -41,7 +59,7 @@ fun BottomNavigationBar(navController: NavController) {
                     popUpTo("generator_screen") { inclusive = true }
                 }
             },
-            icon = { Icon(Icons.Default.Person, contentDescription = stringResource(R.string.generator)) },
+            icon = { Icon( imageVector = ImageVector.vectorResource(R.drawable.shield_keyhole_minimalistic), contentDescription = stringResource(R.string.generator)) },
             label = { Text(stringResource(R.string.generator)) }
         )
         NavigationBarItem(
@@ -52,7 +70,7 @@ fun BottomNavigationBar(navController: NavController) {
                     popUpTo("settings_screen") { inclusive = true }
                 }
             },
-            icon = { Icon(Icons.Default.Settings, contentDescription = stringResource(R.string.settings)) },
+            icon = { Icon( imageVector = ImageVector.vectorResource(R.drawable.settings_minimalistic), contentDescription = stringResource(R.string.settings)) },
             label = { Text(stringResource(R.string.settings)) }
         )
     }

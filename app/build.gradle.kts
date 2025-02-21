@@ -6,15 +6,15 @@ plugins {
 }
 
 android {
-    namespace = "com.example.myapplication"
+    namespace = "com.rozetka.jetistorage"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.myapplication"
-        minSdk = 26
+        applicationId = "com.rozetka.jetistorage"
+        minSdk = 27
         targetSdk = 35
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0.1"
 
     }
 
@@ -46,6 +46,8 @@ dependencies {
     implementation(libs.koin.ksp.compiler)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
     implementation(project(":core"))
     implementation(project(":uiComponents"))
     implementation(project(":dataStorage"))

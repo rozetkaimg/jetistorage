@@ -9,7 +9,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        minSdk = 26
+        minSdk = 27
 
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -33,11 +33,11 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions { kotlinCompilerExtensionVersion = "1.5.1" }
+    composeOptions { kotlinCompilerExtensionVersion = "1.5.14" }
 }
 
 dependencies {
-
+    implementation(libs.accompanist.systemuicontroller)
     implementation(platform(libs.koin.boom))
     implementation(libs.koin.core)
     implementation(libs.koin.android)
@@ -68,4 +68,5 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.biometric)
     implementation(libs.gson)
+    implementation (libs.androidx.material.icons.extended)
 }
