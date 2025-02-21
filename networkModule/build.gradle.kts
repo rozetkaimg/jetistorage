@@ -8,14 +8,14 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        minSdk = 26
+        minSdk = 27
 
 
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -42,4 +42,5 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+
 }

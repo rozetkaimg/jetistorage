@@ -1,6 +1,7 @@
 [versions]
 agp = "8.8.1"
 biometric = "1.4.0-alpha02"
+desugar_jdk_libsVersion = "2.1.4"
 gson = "2.11.0"
 kotlin = "2.0.20"
 coreKtx = "1.15.0"
@@ -22,6 +23,7 @@ appcompat = "1.7.0"
 material = "1.12.0"
 navigationCompose = "2.8.7"
 accompanist = "0.34.0"
+
 
 [libraries]
 androidx-biometric = { module = "androidx.biometric:biometric-ktx", version.ref = "biometric" }
@@ -67,6 +69,9 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-material3-adaptive-navigation-suite = { group = "androidx.compose.material3", name = "material3-adaptive-navigation-suite" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
+tools-desugar_jdk_libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libsVersion" }
+
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

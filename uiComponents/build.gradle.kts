@@ -16,7 +16,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -26,6 +26,7 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+
     }
     kotlinOptions {
         jvmTarget = "11"
@@ -37,6 +38,7 @@ android {
 }
 
 dependencies {
+    coreLibraryDesugaring(libs.tools.desugar.jdk.libs)
     implementation(libs.accompanist.systemuicontroller)
     implementation(platform(libs.koin.boom))
     implementation(libs.koin.core)

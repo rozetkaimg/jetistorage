@@ -11,19 +11,14 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalView
-import com.rozetka.uicomponents.ext.Const.DarkThemeState
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.rozetka.uicomponents.ext.Const.DynamicColorState
-import com.rozetka.uicomponents.ext.Const.StatusBarIconColor
+import com.rozetka.uicomponents.ext.ConstView.DarkThemeState
+import com.rozetka.uicomponents.ext.ConstView.DynamicColorState
+import com.rozetka.uicomponents.ext.ConstView.StatusBarIconColor
+
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -58,7 +53,7 @@ fun DefaultApplicationTheme(
 
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
+            LocalContext.current
             when (DarkThemeState.value) {
                 0 -> if (isSystemInDarkTheme()) {
                     if (DynamicColorState.value) {

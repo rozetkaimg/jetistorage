@@ -4,7 +4,7 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 
-object Const {
+object ConstView {
 
     val DynamicColorState: MutableState<Boolean> = mutableStateOf(true)
 

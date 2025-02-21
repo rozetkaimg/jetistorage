@@ -19,3 +19,13 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-keep class com.rozetka.uicomponents.screens.RootScreenKt { *; }
+-dontwarn java.lang.invoke.StringConcatFactory
+-dontwarn com.rozetka.uicomponents.ext.Const
+-keep class java.io.BufferedInputStream { *; }
+-keep class java.nio.file.Path { *; }
+-keep class java.util.concurrent.LinkedBlockingQueue { *; }
+-keep interface java.util.concurrent.BlockingQueue { *; }
+-keep class java.io.BufferedInputStream { *; }
+-keep class java.nio.file.Path { *; }
+

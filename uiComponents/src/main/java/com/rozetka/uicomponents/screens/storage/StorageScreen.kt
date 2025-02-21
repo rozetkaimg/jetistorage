@@ -6,6 +6,6 @@ import org.koin.mp.KoinPlatform.getKoin
 
 @Composable
 fun StorageScreen() {
-    val storageViewModel: StorageViewModel = getKoin().get()
+
     Text("sdsdsdsdsdsdadasdassda")
 }

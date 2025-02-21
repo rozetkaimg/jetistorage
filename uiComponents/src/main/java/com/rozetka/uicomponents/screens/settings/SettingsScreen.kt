@@ -1,7 +1,6 @@
 package com.rozetka.uicomponents.screens.settings
 
 import android.annotation.SuppressLint
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -13,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.rounded.Android
 import androidx.compose.material.icons.rounded.DarkMode
 import androidx.compose.material.icons.rounded.LightMode
@@ -22,7 +20,6 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -34,13 +31,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavHostController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.rozetka.uicomponents.R
-import com.rozetka.uicomponents.ext.BiometricAuthenticator
-import com.rozetka.uicomponents.ext.Const.DarkThemeState
-import com.rozetka.uicomponents.ext.Const.DynamicColorState
+import com.rozetka.uicomponents.ext.ConstView.DarkThemeState
+import com.rozetka.uicomponents.ext.ConstView.DynamicColorState
 import com.rozetka.uicomponents.screens.settings.components.MonetItem
 import com.rozetka.uicomponents.screens.settings.components.ThemeItem
 
@@ -55,26 +50,8 @@ fun SettingsScreen(navController: NavHostController) {
     val systemUiController = rememberSystemUiController()
     var statusBarIconColor = getStatusBarIconState()
     val context = LocalContext.current
-    val activity = context as? FragmentActivity ?: return
 
-    val biometricAuthenticator = remember {
 
-        BiometricAuthenticator(
-            activity,
-            onAuthSuccess = {
-                isAuthenticated = true
-                errorMessage = ""
-                loading = false
-                showAuthButton = false
-            },
-            onAuthFailure = {
-                errorMessage = it
-                loading = false
-                showAuthButton = true
-            }
-        )
-
-    }
 
     Scaffold(modifier = Modifier.fillMaxSize(), topBar = {
 

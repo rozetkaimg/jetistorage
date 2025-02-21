@@ -1,10 +1,9 @@
-package com.rozetka.core
+package com.example.myapplication
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.fragment.app.FragmentActivity
 import com.rozetka.uicomponents.screens.RootScreen
-
 
 class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,7 +11,7 @@ class MainActivity : FragmentActivity() {
 
         setContent {
 
-                RootScreen()
+            RootScreen()
 
         }
     }

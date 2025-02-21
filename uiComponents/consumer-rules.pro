@@ -1,0 +1,16 @@
+-keep class com.rozetka.uicomponents.screens.RootScreenKt
+-dontwarn java.lang.invoke.StringConcatFactory
+-keep class java.io.BufferedInputStream { *; }
+-keep class java.nio.file.Path { *; }
+-keep class java.io.BufferedInputStream { *; }
+-keep class java.nio.file.Path { *; }
+-keep class java.util.concurrent.LinkedBlockingQueue { *; }
+-keep interface java.util.concurrent.BlockingQueue { *; }
+-keep class java.io.BufferedInputStream { *; }
+-keep class java.nio.file.Path { *; }
+
+-keep class com.rozetka.uicomponents.di.UiModuleKt { *; }
+-keep class com.rozetka.uicomponents.di.UiModuleKt
+-dontwarn java.lang.management.ManagementFactory
+-dontwarn java.lang.management.RuntimeMXBean
+-dontwarn com.rozetka.uicomponents.di.UiModuleKt
