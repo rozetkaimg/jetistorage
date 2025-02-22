@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="settings">Настройки</string>
+    <string name="generator">Генератор</string>
+    <string name="storage">Хранилище</string>
+    <string name="monet">Динамическая</string>
+    <string name="length">Длина</string>
+    <string name="theme">Тема</string>
+    <string name="systemic">Системная</string>
+    <string name="light">Светлая</string>
+    <string name="dark">Темная</string>
+    <string name="generate_pass">Сгенерировать пароль</string>
+    <string name="password_length">Длинна пароля</string>
+    <string name="settings_symbols">Содержание пароля</string>
+    <string name="use_symbols">Символы:</string>">
+    <string name="use_сapital_letters">Заглавные буквы:</string>
+    <string name="use_lowercase_letters"> Cтрочные буквы:</string>
+    <string name="use_nember">Цифры:</string>
+    <string name="clean">Очистить</string>
+    <string name="copy">Копировать</string>
+    <string name="static_">Статичный</string>
+    <string name="colors">Цвета</string>
+</resources>

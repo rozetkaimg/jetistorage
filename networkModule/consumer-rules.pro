@@ -1,0 +1,2 @@
+-keep class java.io.BufferedInputStream { *; }
+-keep class java.nio.file.Path { *; }

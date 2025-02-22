@@ -1,0 +1,23 @@
+<resources>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="settings">Settings</string>
+    <string name="generator">Generator</string>
+    <string name="storage">Storage</string>
+    <string name="theme">Theme</string>
+    <string name="systemic">System</string>
+    <string name="light">Light</string>
+    <string name="dark">Dark</string>
+    <string name="monet">Monet</string>
+    <string name="static_">Static</string>
+    <string name="length">Length</string>
+    <string name="generate_pass">Generate password</string>
+    <string name="password_length">Password length</string>
+    <string name="settings_symbols">Сharacter selection</string>
+    <string name="use_symbols">Use symbols</string>">
+    <string name="use_сapital_letters">Capital letters</string>
+    <string name="use_lowercase_letters">Capital Lowercase</string>
+    <string name="use_nember">Number</string>
+    <string name="clean">Clean</string>
+    <string name="copy">Copy</string>
+    <string name="colors">Colors</string>
+</resources>

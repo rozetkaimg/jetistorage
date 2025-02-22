@@ -19,5 +19,10 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "My Application"
+rootProject.name = "SE"
 include(":app")
+include(":uiComponents")
+include(":dataStorage")
+include(":networkModule")
+include(":core")
+include(":securelib")
