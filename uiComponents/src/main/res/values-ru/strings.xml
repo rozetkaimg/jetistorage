@@ -5,7 +5,7 @@
     <string name="generator">Генератор</string>
     <string name="storage">Хранилище</string>
     <string name="monet">Динамическая</string>
-    <string name="length">Длинна</string>
+    <string name="length">Длина</string>
     <string name="theme">Тема</string>
     <string name="systemic">Системная</string>
     <string name="light">Светлая</string>
@@ -17,4 +17,6 @@
     <string name="use_сapital_letters">Заглавные буквы:</string>
     <string name="use_lowercase_letters"> Cтрочные буквы:</string>
     <string name="use_nember">Цифры:</string>
+    <string name="clean">Очистить</string>
+    <string name="copy">Копировать</string>
 </resources>

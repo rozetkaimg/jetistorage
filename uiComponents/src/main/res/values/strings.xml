@@ -13,9 +13,9 @@
     <string name="password_length">Password length</string>
     <string name="settings_symbols">Сharacter selection</string>
     <string name="use_symbols">Use symbols</string>">
-<string name="use_сapital_letters">Capital letters</string>
+    <string name="use_сapital_letters">Capital letters</string>
     <string name="use_lowercase_letters">Capital Lowercase</string>
     <string name="use_nember">Number</string>
-
-
-    </resources>
+    <string name="clean">Clean</string>
+    <string name="copy">Copy</string>
+</resources>

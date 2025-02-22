@@ -71,4 +71,5 @@ dependencies {
     implementation(libs.androidx.biometric)
     implementation(libs.gson)
     implementation (libs.androidx.material.icons.extended)
+    implementation(project(":securelib"))
 }

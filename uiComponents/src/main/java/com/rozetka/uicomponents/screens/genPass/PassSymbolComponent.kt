@@ -20,66 +20,96 @@ import androidx.compose.ui.unit.sp
 import com.rozetka.uicomponents.R
 
 @Composable
-fun  PassSymbolComponent() {
-
+fun PassSymbolComponent(
+    useSymbols: Boolean,
+    useNumber: Boolean,
+    useLowercase: Boolean,
+    useCapital: Boolean,
+    onSymbolsChanged: (Boolean) -> Unit,
+    onNumberChanged: (Boolean) -> Unit,
+    onLowercaseChanged: (Boolean) -> Unit,
+    onCapitalChanged: (Boolean) -> Unit,
+) {
     Card(
         Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp), shape = RoundedCornerShape(20.dp)
+            .padding(horizontal = 16.dp),
+        shape = RoundedCornerShape(20.dp)
     ) {
-
-        Column(Modifier.height(324.dp)) {
+        Column {
             Spacer(Modifier.height(12.dp))
+
+            // Use Symbols
             Text(
                 stringResource(R.string.use_symbols),
-                Modifier.padding(horizontal = 12.dp, ),
+                Modifier.padding(horizontal = 16.dp),
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
-
             )
-            PassCharterConf("!@#$%^&*()")
+            PassCharterConf(
+                text = "!@#$%^&*()",
+                checked = useSymbols,
+                onCheckedChange = onSymbolsChanged
+            )
+
+            // Use Capital Letters
             Text(
                 stringResource(R.string.use_сapital_letters),
-                Modifier.padding(horizontal = 12.dp),
+                Modifier.padding(horizontal = 16.dp),
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
-
             )
-            PassCharterConf("A-Z")
+            PassCharterConf(
+                text = "A-Z",
+                checked = useCapital,
+                onCheckedChange = onCapitalChanged
+            )
+
+            // Use Lowercase Letters
             Text(
                 stringResource(R.string.use_lowercase_letters),
-                Modifier.padding(horizontal = 12.dp),
+                Modifier.padding(horizontal = 16.dp),
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
-
             )
-            PassCharterConf("a-z")
+            PassCharterConf(
+                text = "a-z",
+                checked = useLowercase,
+                onCheckedChange = onLowercaseChanged
+            )
+
+            // Use Numbers
             Text(
                 stringResource(R.string.use_nember),
-                Modifier.padding(horizontal = 12.dp),
+                Modifier.padding(horizontal = 16.dp),
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
-
             )
-            PassCharterConf("0-9")
-
+            PassCharterConf(
+                text = "0-9",
+                checked = useNumber,
+                onCheckedChange = onNumberChanged
+            )
         }
-
     }
-
 }
 
 @Composable
-fun PassCharterConf(text: String){
-    Box(Modifier.fillMaxWidth().padding(horizontal = 12.dp)) {
+fun PassCharterConf(text: String, checked: Boolean, onCheckedChange: (Boolean) -> Unit) {
+    Box(
+        Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp)
+    ) {
         Text(
-            text,
+            text = text,
             Modifier.align(Alignment.CenterStart),
-            fontSize = 20.sp,
+            fontSize = 20.sp
         )
-
-        Switch(checked = false, onCheckedChange = {
-
-        }, modifier = Modifier.align(Alignment.CenterEnd))
+        Switch(
+            checked = checked,
+            onCheckedChange = onCheckedChange, // передаем функцию для изменения состояния
+            modifier = Modifier.align(Alignment.CenterEnd)
+        )
     }
 }

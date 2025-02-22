@@ -28,4 +28,4 @@
 -keep interface java.util.concurrent.BlockingQueue { *; }
 -keep class java.io.BufferedInputStream { *; }
 -keep class java.nio.file.Path { *; }
-
+-keep class com.rozetka.uicomponents.di.UiModuleKt { *; }
