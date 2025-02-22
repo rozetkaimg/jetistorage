@@ -14,7 +14,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.rozetka.uicomponents.ext.ConstView.DarkThemeState
 import com.rozetka.uicomponents.ext.ConstView.DynamicColorState
 import com.rozetka.uicomponents.ext.ConstView.StatusBarIconColor
@@ -49,7 +48,7 @@ fun DefaultApplicationTheme(
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit,
 ) {
-    val systemUiController = rememberSystemUiController()
+
 
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
@@ -99,13 +98,11 @@ fun DefaultApplicationTheme(
         else -> LightColorScheme
 
     }
-    SideEffect {
-        systemUiController.setSystemBarsColor(
-            color = Color.Transparent,
-            darkIcons = StatusBarIconColor.value,
 
-            )
+    SideEffect {
+
     }
+
     MaterialTheme(
         colorScheme = colorScheme.switch(),
         typography = Typography,

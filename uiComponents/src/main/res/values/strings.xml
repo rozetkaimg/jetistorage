@@ -8,6 +8,7 @@
     <string name="light">Light</string>
     <string name="dark">Dark</string>
     <string name="monet">Monet</string>
+    <string name="static_">Static</string>
     <string name="length">Length</string>
     <string name="generate_pass">Generate password</string>
     <string name="password_length">Password length</string>
@@ -18,4 +19,5 @@
     <string name="use_nember">Number</string>
     <string name="clean">Clean</string>
     <string name="copy">Copy</string>
+    <string name="colors">Colors</string>
 </resources>

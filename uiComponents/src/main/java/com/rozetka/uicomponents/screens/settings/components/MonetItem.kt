@@ -21,13 +21,11 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -36,7 +34,14 @@ import com.rozetka.uicomponents.ext.ConstView.DynamicColorState
 
 @RequiresApi(Build.VERSION_CODES.S)
 @Composable
-fun MonetItem(defaultState: Boolean, label: String, onClick: () -> Unit) {
+fun MonetItem(
+    defaultState: Boolean,
+    label: String,
+    onClick: () -> Unit,
+    colorOne: Color,
+    colorTwo: Color,
+    colorThree: Color
+) {
 
     Row(
         Modifier
@@ -47,7 +52,9 @@ fun MonetItem(defaultState: Boolean, label: String, onClick: () -> Unit) {
     ) {
         Column(Modifier.weight(1f)) {
             Card(
-                Modifier.height(90.dp).fillMaxWidth(),
+                Modifier
+                    .height(90.dp)
+                    .fillMaxWidth(),
                 shape = RoundedCornerShape(24.dp)
             ) {
                 Box(
@@ -79,9 +86,7 @@ fun MonetItem(defaultState: Boolean, label: String, onClick: () -> Unit) {
                                     .height(25.dp)
                                     .fillMaxWidth()
                                     .background(
-                                        dynamicLightColorScheme(
-                                            LocalContext.current
-                                        ).secondary
+                                        colorOne
                                     )
                             ) {
 
@@ -90,9 +95,7 @@ fun MonetItem(defaultState: Boolean, label: String, onClick: () -> Unit) {
                                 Modifier
                                     .size(25.dp)
                                     .background(
-                                        dynamicDarkColorScheme(
-                                            LocalContext.current
-                                        ).primary
+                                        colorTwo
                                     )
                                     .align(Alignment.BottomStart)
                             ) {
@@ -102,9 +105,7 @@ fun MonetItem(defaultState: Boolean, label: String, onClick: () -> Unit) {
                                 Modifier
                                     .size(25.dp)
                                     .background(
-                                        dynamicLightColorScheme(
-                                            LocalContext.current
-                                        ).primaryContainer
+                                        colorThree
                                     )
                                     .align(Alignment.BottomEnd)
                             ) {

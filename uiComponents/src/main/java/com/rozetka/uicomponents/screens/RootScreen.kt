@@ -6,6 +6,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.rozetka.uicomponents.ext.ChangeStatusBarIconsColor
+import com.rozetka.uicomponents.ext.ConstView
 import com.rozetka.uicomponents.screens.aboutScreen.AboutScreen
 import com.rozetka.uicomponents.screens.genPass.GenPassScreen
 import com.rozetka.uicomponents.screens.settings.SettingsScreen
@@ -17,6 +19,7 @@ import com.rozetka.uicomponents.ui.theme.DefaultApplicationTheme
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun RootScreen() {
+    ChangeStatusBarIconsColor(darkIcons = ConstView.StatusBarIconColor.value)
     DefaultApplicationTheme {
         val navController = rememberNavController()
         Scaffold(

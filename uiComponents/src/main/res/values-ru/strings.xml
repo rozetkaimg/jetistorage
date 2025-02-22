@@ -19,4 +19,6 @@
     <string name="use_nember">Цифры:</string>
     <string name="clean">Очистить</string>
     <string name="copy">Копировать</string>
+    <string name="static_">Статичный</string>
+    <string name="colors">Цвета</string>
 </resources>
