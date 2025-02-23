@@ -1,2 +1,8 @@
 -keep class java.io.BufferedInputStream { *; }
 -keep class java.nio.file.Path { *; }
+-dontwarn com.rozetka.datastorage.SettingsStorage
+-keep class com.rozetka.datastorage.SettingsStorage { *; }
+-keep class kotlinx.coroutines.android.AndroidExceptionPreHandler
+-keep class kotlinx.coroutines.android.AndroidDispatcherFactory
+-keep class com.rozetka.datastorage.A$*
+-keep class com.rozetka.datastorage.SettingsStorage$Companion { *; }

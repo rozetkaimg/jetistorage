@@ -24,7 +24,11 @@ import com.rozetka.uicomponents.ext.ConstView.StatusBarIconColor
 import com.rozetka.uicomponents.screens.settings.getStatusBarIconState
 
 @Composable
-fun ThemeComponent() {
+fun ThemeComponent(
+    onCheckedChange_System: () -> Unit,
+    onCheckedChange_Light: () -> Unit,
+    onCheckedChange_Dark: () -> Unit,
+) {
     var statusBarIcon by remember { mutableStateOf(value = !StatusBarIconColor.value) }
     ChangeStatusBarIconsColor(statusBarIcon)
     var statusBarIconColor = getStatusBarIconState()
@@ -40,6 +44,7 @@ fun ThemeComponent() {
             ThemeItem({
                 DarkThemeState.value = 0
                 StatusBarIconColor.value = statusBarIconColor
+                onCheckedChange_System()
                 statusBarIcon = !statusBarIconColor
             }, stringResource(id = R.string.systemic), Icons.Rounded.Android, 0)
         }
@@ -50,7 +55,7 @@ fun ThemeComponent() {
                     DarkThemeState.value = 1
                     StatusBarIconColor.value = true
                     statusBarIcon = false
-
+                    onCheckedChange_Light()
                 },
                 stringResource(id = R.string.light),
                 Icons.Rounded.LightMode,
@@ -64,6 +69,7 @@ fun ThemeComponent() {
                     DarkThemeState.value = 2
                     StatusBarIconColor.value = false
                     statusBarIcon = true
+                    onCheckedChange_Dark()
                 },
                 stringResource(id = R.string.dark),
                 Icons.Rounded.DarkMode,

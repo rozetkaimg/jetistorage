@@ -72,4 +72,5 @@ dependencies {
     implementation(libs.gson)
     implementation (libs.androidx.material.icons.extended)
     implementation(project(":securelib"))
+    implementation(project(":core"))
 }

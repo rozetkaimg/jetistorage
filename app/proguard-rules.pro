@@ -70,3 +70,5 @@
     *;
 }
 -dontwarn com.fasterxml.jackson.databind.*
+-keep class kotlinx.coroutines.android.AndroidExceptionPreHandler
+-keep class kotlinx.coroutines.android.AndroidDispatcherFactory

@@ -23,3 +23,10 @@
 -keep class java.nio.file.Path { *; }
 -keep class java.util.concurrent.LinkedBlockingQueue { *; }
 -keep interface java.util.concurrent.BlockingQueue { *; }
+-dontwarn com.rozetka.datastorage.SettingsStorage
+-keep class com.rozetka.datastorage.SettingsStorage { *; }
+-keep class kotlinx.coroutines.android.AndroidExceptionPreHandler
+-keep class kotlinx.coroutines.android.AndroidDispatcherFactory
+-keep class com.rozetka.datastorage.SettingsStore{ *; }
+-keep class com.rozetka.datastorage.SettingsStorage {*;}
+-keep class com.rozetka.datastorage.SettingsStorage$Companion { *; }

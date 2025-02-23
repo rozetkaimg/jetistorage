@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(project(":core"))
     implementation(project(":uiComponents"))
+    implementation(project(":dataStorage"))
 
 
 }

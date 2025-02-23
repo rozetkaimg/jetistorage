@@ -34,16 +34,21 @@ import com.rozetka.uicomponents.R
 import com.rozetka.uicomponents.ext.ConstView.DarkThemeState
 import com.rozetka.uicomponents.ext.ConstView.DynamicColorState
 import com.rozetka.uicomponents.screens.settings.components.MonetItem
+import com.rozetka.uicomponents.screens.settings.components.StaticColorItem
 import com.rozetka.uicomponents.screens.settings.components.ThemeComponent
+import com.rozetka.uicomponents.ui.colors.GreenColor
+import com.rozetka.uicomponents.ui.colors.OrangeColor
+import com.rozetka.uicomponents.ui.colors.PinkColor
+import com.rozetka.uicomponents.ui.colors.PixelColor
 
 @SuppressLint("NewApi", "UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen(navController: NavHostController) {
 
-    LocalContext.current
-
-
+    var context = LocalContext.current
+    var viewModel = SettingsViewModel()
+    viewModel.setDataInit(context)
     Scaffold(modifier = Modifier.fillMaxSize(), topBar = {
         TopAppBar(title = {
             Row {
@@ -67,16 +72,21 @@ fun SettingsScreen(navController: NavHostController) {
 
     }
     ) { paddingValues ->
-        Column(Modifier
-            .padding(top = paddingValues.calculateTopPadding())
-            .fillMaxSize()) {
+        Column(
+            Modifier
+                .padding(top = paddingValues.calculateTopPadding())
+                .fillMaxSize()
+        ) {
             Text(
                 stringResource(id = R.string.theme),
                 fontWeight = FontWeight.Bold,
                 fontSize = 18.sp,
                 modifier = Modifier.padding(start = 16.dp, bottom = 12.dp, top = 16.dp)
             )
-            ThemeComponent()
+            ThemeComponent(
+                { viewModel.setThemeState(0, context) },
+                { viewModel.setThemeState(1, context) },
+                { viewModel.setThemeState(2, context) })
             Text(
                 stringResource(id = R.string.colors),
                 fontWeight = FontWeight.Bold,
@@ -89,7 +99,10 @@ fun SettingsScreen(navController: NavHostController) {
                     MonetItem(
                         true,
                         stringResource(R.string.monet),
-                        { DynamicColorState.value = true },
+                        {
+                            DynamicColorState.value = true
+                            viewModel.setMonetState(true, context)
+                        },
                         dynamicLightColorScheme(LocalContext.current).secondary,
                         dynamicDarkColorScheme(LocalContext.current).primary,
                         dynamicLightColorScheme(LocalContext.current).primaryContainer
@@ -100,15 +113,57 @@ fun SettingsScreen(navController: NavHostController) {
                     MonetItem(
                         false,
                         stringResource(R.string.static_),
-                        { DynamicColorState.value = false },
+                        {
+                            DynamicColorState.value = false
+                            viewModel.setMonetState(false, context)
+                        },
                         lightColorScheme().secondary,
                         darkColorScheme().primary,
                         lightColorScheme().primaryContainer
                     )
                 }
-            }
-        }
 
+            }
+            Text(
+                "Палитра",
+                fontWeight = FontWeight.Bold,
+                fontSize = 18.sp,
+                modifier = Modifier.padding(start = 16.dp, bottom = 12.dp, top = 16.dp)
+            )
+            Box(Modifier.fillMaxWidth()) {
+                Row(Modifier.align(Alignment.TopCenter)) {
+                    StaticColorItem(
+                        {},
+                        PixelColor().oneColor,
+                        PixelColor().twoColor,
+                        PixelColor().threeColor
+                    )
+                    Spacer(Modifier.size(4.dp))
+                    StaticColorItem(
+                        {},
+                        GreenColor().oneColor,
+                        GreenColor().twoColor,
+                        GreenColor().threeColor
+                    )
+                    Spacer(Modifier.size(4.dp))
+                    StaticColorItem(
+                        {},
+                        OrangeColor().oneColor,
+                        OrangeColor().twoColor,
+                        OrangeColor().threeColor
+                    )
+                    Spacer(Modifier.size(4.dp))
+                    StaticColorItem(
+                        {},
+                        PinkColor().oneColor,
+                        PinkColor().twoColor,
+                        PinkColor().threeColor
+                    )
+
+                }
+            }
+
+        }
     }
 
 
